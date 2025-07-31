@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misrain Ruiz Lopez | Ingeniero en Computación & Desarrollador Full Stack</title>
+    <meta name="description"
+        content="Portafolio profesional de Misrain Ruiz Lopez, Ingeniero en Computación y Desarrollador Full Stack experto en NestJS, Angular, SQL Server, TypeORM y Prisma.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#1e40af',
+                        accent: '#10b981',
+                        dark: '#1f2937',
+                        light: '#f9fafb'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .skill-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card {
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50 text-gray-800">
+    <!-- Header y Navegación -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-primary">Misrain Ruiz Lopez</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="nav-link text-gray-700 hover:text-primary transition">Sobre Mí</a>
+                    <a href="#experience" class="nav-link text-gray-700 hover:text-primary transition">Experiencia</a>
+                    <a href="#projects" class="nav-link text-gray-700 hover:text-primary transition">Proyectos</a>
+                    <a href="#skills" class="nav-link text-gray-700 hover:text-primary transition">Habilidades</a>
+                    <a href="#education" class="nav-link text-gray-700 hover:text-primary transition">Educación</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-primary transition">Contacto</a>
+                </div>
+                <button class="md:hidden focus:outline-none" id="menu-toggle">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden mt-4" id="mobile-menu">
+                <div class="flex flex-col space-y-3">
+                    <a href="#about" class="block px-3 py-2 rounded hover:bg-gray-100">Sobre Mí</a>
+                    <a href="#experience" class="block px-3 py-2 rounded hover:bg-gray-100">Experiencia</a>
+                    <a href="#projects" class="block px-3 py-2 rounded hover:bg-gray-100">Proyectos</a>
+                    <a href="#skills" class="block px-3 py-2 rounded hover:bg-gray-100">Habilidades</a>
+                    <a href="#education" class="block px-3 py-2 rounded hover:bg-gray-100">Educación</a>
+                    <a href="#contact" class="block px-3 py-2 rounded hover:bg-gray-100">Contacto</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-r from-blue-50 to-indigo-50">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 flex justify-center mb-10 md:mb-0">
+                <img src="assets/PhotoRoom-20230907_002632.png" alt="Foto de Misrain Ruiz Lopez"
+                    class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-xl border-4 border-white">
+            </div>
+            <div class="md:w-1/2 text-center md:text-left">
+                <h1 class="text-4xl md:text-5xl font-bold text-dark mb-4">Misrain Ruiz Lopez</h1>
+                <h2 class="text-2xl md:text-3xl text-primary mb-6">Ingeniero en Computación | Desarrollador Full Stack
+                </h2>
+                <p class="text-lg text-gray-600 mb-8 max-w-lg mx-auto md:mx-0">Construyendo soluciones robustas y
+                    escalables con pasión por la innovación tecnológica.</p>
+                <div
+                    class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="assets/CV_MisrainRuizLopez_2025.pdf" target="_blank"
+                        class="bg-primary hover:bg-secondary text-white font-medium py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center">
+                        <i class="fas fa-download mr-2"></i> Descargar CV
+                    </a>
+                    <a href="https://github.com/MisrainRL" target="_blank"
+                        class="bg-white hover:bg-gray-100 text-gray-800 font-medium py-3 px-6 rounded-lg border border-gray-300 transition duration-300 flex items-center justify-center">
+                        <i class="fab fa-github mr-2"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/misrainrl/" target="_blank"
+                        class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center">
+                        <i class="fab fa-linkedin-in mr-2"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-dark">Sobre <span class="text-primary">Mí</span></h2>
+            <div class="max-w-4xl mx-auto bg-gray-50 rounded-xl p-8 shadow-md">
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    Soy <span class="font-semibold text-primary">Misrain Ruiz Lopez</span>, un Ingeniero en Computación
+                    con 3 años de experiencia dedicado a transformar ideas en soluciones de software funcionales y
+                    eficientes. Mi pasión radica en el desarrollo Full Stack, donde disfruto abordando desafíos tanto en
+                    el backend con <span class="font-semibold">NestJS, TypeORM y Prisma</span>, como en el frontend con
+                    <span class="font-semibold">Angular</span>.
+                </p>
+                <p class="text-lg text-gray-700 mt-4 leading-relaxed">
+                    Creo firmemente en la importancia de un código limpio, arquitecturas escalables y la colaboración
+                    ágil para entregar productos de alta calidad. Mi objetivo es contribuir al éxito de proyectos
+                    innovadores, aplicando mis conocimientos y mi capacidad para aprender y adaptarme a nuevas
+                    tecnologías.
+                </p>
+                <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-white p-4 rounded-lg shadow text-center">
+                        <div class="text-primary text-3xl mb-2">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4 class="font-semibold">Full Stack</h4>
+                        <p class="text-sm text-gray-600">Experiencia en todo el ciclo de desarrollo</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow text-center">
+                        <div class="text-primary text-3xl mb-2">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h4 class="font-semibold">Backend</h4>
+                        <p class="text-sm text-gray-600">NestJS, TypeORM, Prisma</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow text-center">
+                        <div class="text-primary text-3xl mb-2">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h4 class="font-semibold">Frontend</h4>
+                        <p class="text-sm text-gray-600">Angular, TypeScript</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow text-center">
+                        <div class="text-primary text-3xl mb-2">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h4 class="font-semibold">Bases de Datos</h4>
+                        <p class="text-sm text-gray-600">SQL Server, PostgreSQL</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-dark">Experiencia <span
+                    class="text-primary">Laboral</span></h2>
+
+            <div class="max-w-4xl mx-auto space-y-12">
+                <!-- Experiencia 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                    <div class="p-8">
+                        <div class="flex flex-col md:flex-row justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-primary">Desarrollador Full Stack</h3>
+                                <h4 class="text-xl text-gray-700">Cooperativa ACREIMEX | Oaxaca, México</h4>
+                            </div>
+                            <div class="mt-2 md:mt-0">
+                                <span
+                                    class="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Junio
+                                    2024 – Actualmente</span>
+                            </div>
+                        </div>
+                        <ul class="mt-6 space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2 mt-1">•</span>
+                                <span>Liderazgo en el desarrollo de un sistema integral para la gestión de procesos
+                                    internos del área de relaciones laborales, mejorando la eficiencia operativa.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2 mt-1">•</span>
+                                <span>Implementación de un backend escalable utilizando <strong>NestJS y
+                                        TypeORM</strong>, con arquitectura basada en microservicios.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2 mt-1">•</span>
+                                <span>Desarrollo de un frontend dinámico y responsivo en <strong>Angular</strong>,
+                                    optimizando la experiencia de usuario.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2 mt-1">•</span>
+                                <span>Integración y gestión de bases de datos <strong>SQL Server</strong>, asegurando
+                                    alta disponibilidad y seguridad.</span>
+                            </li>
+                        </ul>
+                        <div class="mt-6">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">NestJS</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">TypeORM</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Angular</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">SQL Server</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Prisma ORM</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">JWT</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Docker</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experiencia 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                    <div class="p-8">
+                        <div class="flex flex-col md:flex-row justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-primary">Auxiliar de Sistemas</h3>
+                                <h4 class="text-xl text-gray-700">Centro de Servicio DXN Oax012 de Oaxaca | Oaxaca,
+                                    México</h4>
+                            </div>
+                            <div class="mt-2 md:mt-0">
+                                <span
+                                    class="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Octubre
+                                    2023 – Mayo 2024</span>
+                            </div>
+                        </div>
+                        <ul class="mt-6 space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2 mt-1">•</span>
+                                <span>Realización de levantamiento de requerimientos y creación de prototipos para el
+                                    sistema web.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2 mt-1">•</span>
+                                <span>Programación y mantenimiento de página web, asegurando su funcionalidad.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2 mt-1">•</span>
+                                <span>Gestión y captura de datos en sistemas de ventas.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2 mt-1">•</span>
+                                <span>Soporte técnico presencial y telefónico a usuarios.</span>
+                            </li>
+                        </ul>
+                        <div class="mt-6">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">HTML</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">CSS</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">SQL</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">PHP</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experiencia 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                    <div class="p-8">
+                        <div class="flex flex-col md:flex-row justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-primary">Administrador</h3>
+                                <h4 class="text-xl text-gray-700">Ternium Monterrey (Contratista) | Monterrey, México
+                                </h4>
+                            </div>
+                            <div class="mt-2 md:mt-0">
+                                <span
+                                    class="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Febrero
+                                    2023 – Agosto 2023</span>
+                            </div>
+                        </div>
+                        <ul class="mt-6 space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2 mt-1">•</span>
+                                <span>Asignado al relevamiento y análisis de código empleado en la línea de
+                                    producción.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2 mt-1">•</span>
+                                <span>Participación en juntas con equipo multidisciplinario para evaluación de
+                                    requisitos.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2 mt-1">•</span>
+                                <span>Análisis de código <strong>Visual Basic 6</strong> para su migración a
+                                    <strong>C#</strong>.</span>
+                            </li>
+                        </ul>
+                        <div class="mt-6">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">VB6</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">C#</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">SQL Server</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Node.js</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">WPF</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">TCP/IP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experiencia 4 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                    <div class="p-8">
+                        <div class="flex flex-col md:flex-row justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-primary">Desarrollador</h3>
+                                <h4 class="text-xl text-gray-700">Udev-It | Remoto</h4>
+                            </div>
+                            <div class="mt-2 md:mt-0">
+                                <span
+                                    class="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Marzo
+                                    2021 – Junio 2021</span>
+                            </div>
+                        </div>
+                        <ul class="mt-6 space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2 mt-1">•</span>
+                                <span>Desarrollo de página web para RICOH Norte utilizando <strong>Elixir y
+                                        Phoenix</strong>.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2 mt-1">•</span>
+                                <span>Ejecución de consultas <strong>SQL</strong> para extracción de datos.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2 mt-1">•</span>
+                                <span>Implementación de pasarela de pagos <strong>Conekta API</strong>.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2 mt-1">•</span>
+                                <span>Trabajo bajo metodología <strong>Scrum</strong>.</span>
+                            </li>
+                        </ul>
+                        <div class="mt-6">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Elixir</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Phoenix</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">PostgreSQL</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Conekta
+                                    API</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">HTML5</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">CSS3</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-dark">Proyectos <span
+                    class="text-primary">Destacados</span></h2>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Proyecto 1 -->
+                <div
+                    class="project-card bg-gray-50 rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-primary p-3 rounded-full mr-4">
+                                <i class="fas fa-laptop-code text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Sistema de estancias profesionales</h3>
+                        </div>
+                        <p class="text-gray-700 mb-6">Lideré el desarrollo de la primera versión de este sistema web,
+                            crucial para la gestión de estancias profesionales en la Universidad del Istmo. El proyecto
+                            abarcó desde el levantamiento de requisitos hasta la configuración del servidor.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">HTML</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">PHP</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">MySQL</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">CSS3</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Fedora</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div
+                    class="project-card bg-gray-50 rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-primary p-3 rounded-full mr-4">
+                                <i class="fas fa-sync-alt text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Reingeniería del Sistema de Estancias</h3>
+                        </div>
+                        <p class="text-gray-700 mb-6">Dirigí la reingeniería del software existente, implementando
+                            nuevos requisitos funcionales y mejoras significativas en el lado del servidor, incluyendo
+                            disparadores a nivel de base de datos para optimizar la funcionalidad.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">HTML</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">PHP</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">MySQL</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">CSS3</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Fedora</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-dark">Habilidades <span
+                    class="text-primary">Técnicas</span></h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <!-- Lenguajes -->
+                <div class="skill-card bg-white rounded-xl shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary p-2 rounded-lg mr-4">
+                            <i class="fas fa-code text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Lenguajes de Programación</h3>
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                            <span>JavaScript (Node.js, Angular, TypeScript)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                            <span>C#</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                            <span>PHP</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                            <span>HTML5, CSS3</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                            <span>Elixir</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                            <span>Apex</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                            <span>Java, Ajax, VB6</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Bases de Datos -->
+                <div class="skill-card bg-white rounded-xl shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary p-2 rounded-lg mr-4">
+                            <i class="fas fa-database text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Bases de Datos & ORMs</h3>
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                            <span>SQL Server</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                            <span>PostgreSQL</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                            <span>MySQL</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                            <span>SQL</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                            <span>TypeORM</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                            <span>Prisma ORM</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Frameworks -->
+                <div class="skill-card bg-white rounded-xl shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary p-2 rounded-lg mr-4">
+                            <i class="fas fa-cubes text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Frameworks & Librerías</h3>
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                            <span>NestJS</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                            <span>Angular</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                            <span>Phoenix</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                            <span>jQuery</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Herramientas -->
+                <div class="skill-card bg-white rounded-xl shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary p-2 rounded-lg mr-4">
+                            <i class="fas fa-tools text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Herramientas & Plataformas</h3>
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                            <span>Git, GitHub, GitLab</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                            <span>Docker, Jenkins</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                            <span>Visual Studio, Visual Code</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                            <span>NetBeans, SublimeText</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Metodologías -->
+                <div class="skill-card bg-white rounded-xl shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary p-2 rounded-lg mr-4">
+                            <i class="fas fa-project-diagram text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Metodologías & Otros</h3>
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                            <span>RESTful APIs, JWT</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                            <span>Salesforce (SOQL, SOSL)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                            <span>Protocolo TCP/IP</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                            <span>Scrum</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                            <span>Pruebas unitarias/end-to-end</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-dark">Educación & <span
+                    class="text-primary">Certificaciones</span></h2>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gray-50 rounded-xl shadow-md p-8 mb-12">
+                    <div class="flex items-start">
+                        <div class="bg-primary p-3 rounded-lg mr-6">
+                            <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-primary mb-1">Ingeniería en Computación</h3>
+                            <h4 class="text-xl text-gray-700 mb-2">Universidad del Istmo Campus Tehuantepec |
+                                Tehuantepec, Oaxaca</h4>
+                            <p class="text-gray-600 mb-4">Enero 2016 – Junio 2021</p>
+                            <p class="text-gray-700">Titulado, con cédula profesional.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-2xl font-bold text-gray-800 mb-6">Certificaciones</h3>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Certificación 1 -->
+                    <div class="bg-gray-50 rounded-lg shadow-sm p-6 border-l-4 border-primary">
+                        <h4 class="font-bold text-lg text-gray-800 mb-2">Google Cloud Computing Foundations</h4>
+                        <p class="text-gray-600 mb-2">Data, ML, and AI in Google Cloud (2024)</p>
+                        <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Google</span>
+                    </div>
+
+                    <!-- Certificación 2 -->
+                    <div class="bg-gray-50 rounded-lg shadow-sm p-6 border-l-4 border-primary">
+                        <h4 class="font-bold text-lg text-gray-800 mb-2">Google Cloud Computing Foundations</h4>
+                        <p class="text-gray-600 mb-2">Infrastructure in Google Cloud (2024)</p>
+                        <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Google</span>
+                    </div>
+
+                    <!-- Certificación 3 -->
+                    <div class="bg-gray-50 rounded-lg shadow-sm p-6 border-l-4 border-primary">
+                        <h4 class="font-bold text-lg text-gray-800 mb-2">Google Cloud Computing Foundations</h4>
+                        <p class="text-gray-600 mb-2">Networking & Security in Google Cloud (2024)</p>
+                        <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Google</span>
+                    </div>
+
+                    <!-- Certificación 4 -->
+                    <div class="bg-gray-50 rounded-lg shadow-sm p-6 border-l-4 border-primary">
+                        <h4 class="font-bold text-lg text-gray-800 mb-2">Google Cloud Computing Foundations</h4>
+                        <p class="text-gray-600 mb-2">Cloud Computing Fundamentals (2024)</p>
+                        <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Google</span>
+                    </div>
+
+                    <!-- Certificación 5 -->
+                    <div class="bg-gray-50 rounded-lg shadow-sm p-6 border-l-4 border-primary">
+                        <h4 class="font-bold text-lg text-gray-800 mb-2">Scrum Foundation Professional Certificate
+                            (SFPC)</h4>
+                        <p class="text-gray-600 mb-2">CERTIPROF (2022)</p>
+                        <span
+                            class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">CERTIPROF</span>
+                    </div>
+
+                    <!-- Certificación 6 -->
+                    <div class="bg-gray-50 rounded-lg shadow-sm p-6 border-l-4 border-primary">
+                        <h4 class="font-bold text-lg text-gray-800 mb-2">Introduction to IoT</h4>
+                        <p class="text-gray-600 mb-2">CISCO (2023)</p>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">CISCO</span>
+                    </div>
+
+                    <!-- Certificación 7 -->
+                    <div class="bg-gray-50 rounded-lg shadow-sm p-6 border-l-4 border-primary">
+                        <h4 class="font-bold text-lg text-gray-800 mb-2">Networking Basics</h4>
+                        <p class="text-gray-600 mb-2">CISCO (2023)</p>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">CISCO</span>
+                    </div>
+
+                    <!-- Certificación 8 -->
+                    <div class="bg-gray-50 rounded-lg shadow-sm p-6 border-l-4 border-primary">
+                        <h4 class="font-bold text-lg text-gray-800 mb-2">Introduction to Cybersecurity</h4>
+                        <p class="text-gray-600 mb-2">CISCO (2022)</p>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">CISCO</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-dark">Contáct<span class="text-primary">ame</span></h2>
+
+            <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-md p-12 text-center">
+                <h3 class="text-2xl font-bold mb-6 text-primary">¡Hablemos!</h3>
+                <p class="mb-8 text-gray-700">Si mi perfil se alinea con tus necesidades o tienes alguna pregunta, no
+                    dudes en contactarme. Estoy abierto a nuevas oportunidades y colaboraciones.</p>
+
+                <div class="space-y-4 mb-8 text-left max-w-md mx-auto">
+                    <div class="flex items-center">
+                        <i class="fas fa-phone-alt mr-4 text-xl text-primary"></i>
+                        <span>(971) 221 95 32</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-envelope mr-4 text-xl text-primary"></i>
+                        <a href="mailto:universidadcomputacion@gmail.com"
+                            class="hover:underline text-gray-700">universidadcomputacion@gmail.com</a>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fab fa-linkedin-in mr-4 text-xl text-primary"></i>
+                        <a href="https://www.linkedin.com/in/misrainrl/" target="_blank"
+                            class="hover:underline text-gray-700">linkedin.com/in/misrainrl</a>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fab fa-github mr-4 text-xl text-primary"></i>
+                        <a href="https://github.com/MisrainRL" target="_blank"
+                            class="hover:underline text-gray-700">github.com/misrainruiz</a>
+                    </div>
+                </div>
+
+                <div class="flex justify-center space-x-6">
+                    <a href="https://github.com/MisrainRL" target="_blank"
+                        class="bg-primary hover:bg-secondary text-white p-4 rounded-full transition">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/misrainrl/" target="_blank"
+                        class="bg-primary hover:bg-secondary text-white p-4 rounded-full transition">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="assets/CV_MisrainRuizLopez_2025.pdf" target="_blank" download
+                        class="bg-primary hover:bg-secondary text-white p-4 rounded-full transition">
+                        <i class="fas fa-file-pdf text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Misrain Ruiz Lopez. Todos los derechos reservados.</p>
+            <div class="mt-4 flex justify-center space-x-6">
+                <a href="https://github.com/MisrainRL" target="_blank"
+                    class="text-gray-300 hover:text-white transition">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/misrainrl/" target="_blank"
+                    class="text-gray-300 hover:text-white transition">
+                    <i class="fab fa-linkedin-in text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    mobileMenu.classList.add('hidden');
+
+                    // Scroll to target
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add shadow to header on scroll
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+
+</html>
